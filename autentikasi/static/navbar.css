@@ -1,0 +1,29 @@
+.topnav {
+    background-color: #BD5555;
+}
+.keranjang {
+    width: 40px;
+    height: 30px;
+    transition: transform .3s;
+}
+.keranjang:hover {
+    -ms-transform: scale(1.35);
+    -webkit-transform: scale(1.35);
+    transform: scale(1.35); 
+}
+.teksnav {
+    color: #FFFFFF;
+    margin-right: 15px;
+}
+.home {
+    font-size: 30px;
+}
+.teksnav:hover {
+    color: #1A1A2E;
+}
+.navbar-link:hover {
+    text-decoration: none;
+}
+.kanan {
+    margin-left: auto;
+}
