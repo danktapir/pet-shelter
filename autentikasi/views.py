@@ -33,7 +33,7 @@ def login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             auth_login(request, user)
-            return redirect('/')
+            return redirect('/home/')
         else:
             print("error.......")
 
