@@ -11,7 +11,7 @@
 
     {% include "navbar.html" %}
     <body style="background-color: #F3F3F3;">
-        <div class="row m-5 justify-content-center">
+        <div class="row justify-content-center">
             <div class="col text-center">
                 {% if messages %}
                     <ul class="messages">
@@ -19,7 +19,7 @@
                         <h5 style="color: black;" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </h5>
                         {% endfor %}
                     </ul>
-                {% endif %}     
+                {% endif %}
             </div>
         </div>
         
@@ -30,7 +30,7 @@
                     {{ form.as_p }}
                     <button type="submit" class="btn btn-primary">Register</button>
                 </form>
-            </div>        
+            </div>
         </div>
 
         <div class="row m-5 justify-content-center">
