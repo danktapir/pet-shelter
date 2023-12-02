@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'autentikasi',
 ]
 
+AUTH_USER_MODEL = 'autentikasi.CustomUser'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

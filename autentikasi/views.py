@@ -14,7 +14,10 @@ def register(request):
         username = form.cleaned_data.get("username")
         email = form.cleaned_data.get("email")
         password = form.cleaned_data.get("password_first")
-        User.objects.create_user(username, email, password)
+        address = form.cleaned_data.get("address")
+        phone = form.cleaned_data.get("phone")
+        
+        User.objects.create_user(username, email, password, home_address=address, phone_number=phone)
         user = authenticate(request, username=username, password=password)
         auth_login(request, user)
         return redirect('/')
