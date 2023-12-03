@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'landing',
     'autentikasi',
+    'other_profile',
 ]
 
 AUTH_USER_MODEL = 'autentikasi.CustomUser'

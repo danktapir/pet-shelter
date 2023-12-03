@@ -6,13 +6,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <title>Log out</title>
+        <title>User Profile</title>
 
         <style>
             .submit {
                 margin-top: 15px;
                 border: none;
-                width: 150px;
+                width: 100px;
                 font-size: 20px;
                 background-color: #BD5555;
                 color: #F3F3F3;
@@ -21,34 +21,28 @@
             .submit:hover {
                 background-color: #920003;
             }
-            .container {
-                vertical-align: middle;
-            }
         </style>
     </head>
 
     {% include "navbar.html" %}
     <body style="background-color: #F3F3F3;">
-        <div class=center>
-            <div class="container">
-                <div class="row m-5 justify-content-center">
-                    <div class="col-md-12 col-sm-12 text-center">
-                        <h2>You've logged out</h2>
-                    </div>
-                </div>
-
-                <div class="row m-5 justify-content-center">
-                    <div class="col-sm-4 text-center">
-                        <a href="{% url 'autentikasi:login' %}"><button class="submit" type="submit">Login again</button></a>
-                    </div>
-
-                    <div class="col-sm-4 text-center">
-                        <a href="{% url 'landing:katalog' %}"><button class="submit" type="submit">Home</button></a>
-                    </div>
-                </div>
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <h4>Username: {{ user.username }}</h4>
+                <h4>Email: {{ user.email }}</h4>
+                <h4>Home Address: {{ user.home_address }}</h4>
+                <h4>Phone Number: {{ user.phone_number }}</h4>
             </div>
         </div>
-        
+
+        <div class="row m-5 justify-content-center">
+            <div class="col-sm-4 text-center">
+                <a href="{% url 'other_profile:report_user' username=user.username %}">
+                    <button class="submit" type="submit">Report</button>
+                </a>
+            </div>
+        </div>
+
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
