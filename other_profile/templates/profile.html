@@ -6,37 +6,41 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <title>Registration</title>
+        <title>User Profile</title>
+
+        <style>
+            .submit {
+                margin-top: 15px;
+                border: none;
+                width: 100px;
+                font-size: 20px;
+                background-color: #BD5555;
+                color: #F3F3F3;
+                border-radius: 10px;
+            }
+            .submit:hover {
+                background-color: #920003;
+            }
+        </style>
     </head>
 
     {% include "navbar.html" %}
     <body style="background-color: #F3F3F3;">
         <div class="row justify-content-center">
             <div class="col text-center">
-                {% if messages %}
-                    <ul class="messages">
-                        {% for message in messages %}
-                        <h5 style="color: black;" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </h5>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </div>
-        </div>
-        
-        <div class="row m-5 justify-content-center">
-            <div class="col-md-8 col-sm-8">
-                <form method="POST">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" class="btn btn-primary">Register</button>
-                </form>
+                <h4>Username: {{ user.username }}</h4>
+                <h4>Email: {{ user.email }}</h4>
+                <h4>Home Address: {{ user.home_address }}</h4>
+                <h4>Phone Number: {{ user.phone_number }}</h4>
             </div>
         </div>
 
         <div class="row m-5 justify-content-center">
-            <div class="col-md-8 col-sm-8">
-                <h5 style="color: black;">Already have an account? <a href="{% url 'autentikasi:login'%}">Sign in</a></h5>
-            </div>   
+            <div class="col-sm-4 text-center">
+                <a href="{% url 'other_profile:report_user' username=user.username %}">
+                    <button class="submit" type="submit">Report</button>
+                </a>
+            </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

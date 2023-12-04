@@ -38,8 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'landing',
     'autentikasi',
+    'other_profile',
 ]
+
+AUTH_USER_MODEL = 'autentikasi.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
