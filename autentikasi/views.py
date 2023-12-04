@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout, get_user_model
-from django.contrib import messages
 from .forms import LoginForm, RegisterForm
 
 User = get_user_model()
@@ -15,9 +14,13 @@ def register(request):
         username = form.cleaned_data.get("username")
         email = form.cleaned_data.get("email")
         password = form.cleaned_data.get("password_first")
-        User.objects.create_user(username, email, password)
-        messages.success(request, f'Account {username} has been created. Please Log In!')
-
+        address = form.cleaned_data.get("address")
+        phone = form.cleaned_data.get("phone")
+        
+        User.objects.create_user(username, email, password, home_address=address, phone_number=phone)
+        user = authenticate(request, username=username, password=password)
+        auth_login(request, user)
+        return redirect('/')
     return render(request, 'register.html', context=context)
 
 def login(request):
@@ -25,18 +28,13 @@ def login(request):
     context = {
         'form': form
     }
-    print(request.user.is_authenticated)
     if form.is_valid():
-        print(form.cleaned_data)
         username = form.cleaned_data.get('username')
         password = form.cleaned_data.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
             auth_login(request, user)
-            return redirect('/home/')
-        else:
-            print("error.......")
-
+            return redirect('/')
     return render(request, 'login.html', context=context)
 
 def logout(request):
