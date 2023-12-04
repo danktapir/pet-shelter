@@ -23,5 +23,5 @@ urlpatterns = [
     path('', include(('landing.urls', 'landing'), namespace='landing')),
     path('', include(('autentikasi.urls', 'autentikasi'), namespace='autentikasi')),
     path('', include(('other_profile.urls', 'other_profile'), namespace='other_profile')),
-    path('my-profile/', include('my_profile.urls', 'my_profile'))
+    path('', include('my_profile.urls')),
 ]
