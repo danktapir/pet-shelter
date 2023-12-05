@@ -5,5 +5,5 @@ app_name = 'my_profile'
 
 urlpatterns = [
     path('my-profile/index/', views.index, name='index'),
-    path('edit-profile/', views.edit_profile, name='edit_profile'),
+    path('edit-profile/index', views.edit_profile, name='edit_profile'),
 ]
