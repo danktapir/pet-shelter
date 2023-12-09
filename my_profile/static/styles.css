@@ -1,28 +1,3 @@
-.topnav {
-    background-color: #BD5555;
-}
-
-.teksnav {
-    color: #FFFFFF;
-    margin-right: 15px;
-}
-
-.home {
-    font-size: 30px;
-}
-
-.teksnav:hover {
-    color: #1A1A2E;
-}
-
-.navbar-link:hover {
-    text-decoration: none;
-}
-
-.kanan {
-    margin-left: auto;
-}
-
 p {
     font-weight: bold;
 }

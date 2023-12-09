@@ -12,6 +12,7 @@ def index(request):
 
 def edit_profile(request):
     form = EditProfileForm(request.POST or None)
+    print(form)
     if form.is_valid():
         cleaned_form = form.cleaned_data
         username = cleaned_form.get("username")
@@ -35,4 +36,4 @@ def edit_profile(request):
 
         return redirect('my-profile/index')
 
-    return render(request, "form_edit_profile.html")
+    return render(request, "form_edit_profile.html", context={'form': form})

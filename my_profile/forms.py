@@ -31,12 +31,13 @@ class EditProfileForm(forms.Form):
     }))
 
     def clean_password(self):
-        cleaned_data = self.cleaned_data
-        password_one = cleaned_data.get('password')
-        password_two = cleaned_data.get('confirm_password')
+        password_one = self.cleaned_data.get('password')
+        password_two = self.cleaned_data.get('confirm_password')
+        print(f"Password : {password_one}")
+        print(f"Confirm Password : {password_two}")
         if (password_one != password_two):
             raise forms.ValidationError("Passwords don't match")
-        return cleaned_data
+        return self.cleaned_data
 
     def clean_username(self):
         username = self.cleaned_data.get('username')
