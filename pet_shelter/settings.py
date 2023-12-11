@@ -77,12 +77,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'pet_shelter.wsgi.application'
 
 
-PARSE_APPLICATION_ID = 'Lk5Cp1fHak19acoHbfmoqHoXhNtzcb6RTSRQc8cP'
-PARSE_CLIENT_KEY = 'eYJiFwud001a0zhv1PWjPBekZqFIC0WZ1UtPPX30'
-PARSE_REST_API_KEY = 'oplSqVIvRsbuLIeQvulHzngbgmJX2GaHC7Exax69'
-PARSE_SERVER_URL = 'https://parseapi.back4app.com/'
-
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
