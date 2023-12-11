@@ -30,6 +30,8 @@ ALLOWED_HOSTS = ['petshelter-ud7n5r4c.b4a.run']
 
 CSRF_TRUSTED_ORIGINS = ['https://petshelter-ud7n5r4c.b4a.run/', 'https://localhost:8000']
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Application definition
 
 INSTALLED_APPS = [
