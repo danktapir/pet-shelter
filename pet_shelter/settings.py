@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['petshelter-ud7n5r4c.b4a.run']
 
+CSRF_TRUSTED_ORIGINS = ['petshelter-ud7n5r4c.b4a.run']
 
 # Application definition
 
