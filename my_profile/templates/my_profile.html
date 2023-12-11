@@ -21,10 +21,10 @@
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav kanan">
-                <!-- {% if user.is_authenticated %}
-                <a class="nav-link" href="{% url 'my_profile:index' %}">
+                {% if user.is_authenticated %}
+                <!-- <a class="nav-link" href="{% url 'my_profile:index' %}">
                     <h5 class="teksnav">{{user.username}}</h5>
-                </a>
+                </a> -->
 
                 <a class="nav-link" href="{% url 'autentikasi:logout'%}">
                     <h5 class="teksnav">Keluar</h5>
@@ -38,7 +38,7 @@
                 <a class="nav-link" href="{% url 'autentikasi:register'%}">
                     <h5 class="teksnav">Daftar</h5>
                 </a>
-                {% endif %} -->
+                {% endif %}
             </div>
         </div>
     </nav>
