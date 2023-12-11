@@ -1,31 +1,20 @@
 stages:
-  - build
   - deploy
-
-before_script:
-- python3 -m venv venv
-- source venv/Scripts/activate
-
-build:
-  stage: build
-  script:
-    - pip install -r requirements.txt
 
 deploy:
   stage: deploy
-
   script:
     - apt-get update -qy
-    - apt-get install -y python3 python3-pip
+    - apt-get install -y python python-pip
     - pip install -r requirements.txt
-    - python3 manage.py migrate
-    - python3 manage.py collectstatic --noinput
-    - python3 manage.py test
-    - python3 manage.py compress --force
-    - python3 manage.py collectstatic --noinput
-    - python3 manage.py migrate
-    - python3 manage.py runserver &
+    - python manage.py migrate
+    - python manage.py collectstatic --noinput
+    - python manage.py test
+    - python manage.py compress --force
+    - python manage.py collectstatic --noinput
+    - python manage.py migrate
+    - python manage.py runserver &
     - sleep 5
-    - python3 manage.py test
+    - python manage.py test
   only:
     - main
