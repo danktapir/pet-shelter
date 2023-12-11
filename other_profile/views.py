@@ -7,14 +7,14 @@ User = get_user_model()
 
 # Create your views here.
 def profile(request, username):
-    user = get_object_or_404(User, username=username)
-    context = {
-        'user': user
-    }
+    user = request.user
+    reported_user = get_object_or_404(User, username=username)
+    context = {'user': user, 'reported_user': reported_user}
     return render(request, 'profile.html', context)
 
 def report_user(request, username):
     reported_user = get_object_or_404(User, username=username)
+    user = request.user
     
     if request.method == 'POST':
         form = ReportForm(request.POST)
@@ -24,7 +24,7 @@ def report_user(request, username):
                 reported_user=reported_user,
                 reason=reason,
             )
-            context = {'user': reported_user}
+            context = {'user': user, 'reported_user': reported_user}
             return render(request, 'profile.html', context)
     else:
         form = ReportForm()
