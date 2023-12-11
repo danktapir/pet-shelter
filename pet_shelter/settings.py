@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xy1sz3tjcdyf1_i4055r9n(8ay3x6j-s_df*ste!4o3s=#uf-g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['petshelter-ud7n5r4c.b4a.run']
 
