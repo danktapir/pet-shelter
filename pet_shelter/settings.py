@@ -26,11 +26,19 @@ SECRET_KEY = 'django-insecure-xy1sz3tjcdyf1_i4055r9n(8ay3x6j-s_df*ste!4o3s=#uf-g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['petshelter-ud7n5r4c.b4a.run', 'node38a.containers.back4app.com']
 
 CSRF_TRUSTED_ORIGINS = ['https://petshelter-ud7n5r4c.b4a.run/', 'https://localhost:8000']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+]
+
 
 # Application definition
 
