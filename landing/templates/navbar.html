@@ -39,7 +39,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav kanan">
                     {% if user.is_authenticated %}
-                        <a class="nav-link" href="{% url 'landing:katalog' %}">
+                        <a class="nav-link" href="{% url 'my_profile:index' %}">
                             <h5 class="teksnav">{{user.username}}</h5>
                         </a>
 

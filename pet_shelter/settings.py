@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'landing',
     'autentikasi',
     'other_profile',
+    'my_profile',
 ]
 
 AUTH_USER_MODEL = 'autentikasi.CustomUser'
