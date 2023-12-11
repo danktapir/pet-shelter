@@ -30,7 +30,7 @@ class EditProfileForm(forms.Form):
         'placeholder': 'Confirm your password',
     }))
 
-    def clean_password(self):
+    def clean(self):
         cleaned_data = self.cleaned_data
         password_one = cleaned_data.get('password')
         password_two = cleaned_data.get('confirm_password')

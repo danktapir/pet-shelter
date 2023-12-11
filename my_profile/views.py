@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from .forms import EditProfileForm
 from django.contrib.auth import get_user_model
+from django.contrib.auth import authenticate, login as auth_login
 
 User = get_user_model()
 
@@ -27,12 +28,18 @@ def edit_profile(request):
         if len(email) != 0:
             user.email = email
         if len(password) != 0:
-            user.password = password
+            user.set_password(password)
         if len(address) != 0:
-            user.address = address
+            user.home_address = address
         if len(phone_num) != 0:
             user.phone_number = phone_num
 
-        return redirect('my-profile/index')
+        user.save()
+        print(f"Username : {user.username}")
+        print(f"Password : {user.password}")
+        print(f"Email : {user.email}")
+        user = authenticate(request, username=username, password=password)
+        auth_login(request, user)
+        return redirect('/my-profile/index')
 
     return render(request, "form_edit_profile.html", context={'form': form})
